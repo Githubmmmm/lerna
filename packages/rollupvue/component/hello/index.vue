@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: zouxm
  * @Date: 2021-05-19 10:14:48
- * @LastEditTime: 2021-05-19 11:00:27
+ * @LastEditTime: 2021-05-19 16:40:58
  * @LastEditors: zouxm
 -->
 <template>
@@ -22,3 +22,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+img {
+    width: 120px;
+}
+</style>

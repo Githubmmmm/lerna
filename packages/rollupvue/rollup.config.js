@@ -2,7 +2,7 @@
  * @Description:
  * @Author: zouxm
  * @Date: 2021-05-18 16:37:14
- * @LastEditTime: 2021-05-19 11:38:01
+ * @LastEditTime: 2021-05-19 16:31:01
  * @LastEditors: zouxm
  */
 //https://juejin.cn/post/6901565843348881416
@@ -12,6 +12,7 @@ import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import image from '@rollup/plugin-image'
 import babel from 'rollup-plugin-babel'
+import postcss from 'rollup-plugin-postcss'
 export default {
     input: 'modules/index.js',
     output: [
@@ -31,11 +32,14 @@ export default {
     ],
     plugins: [
         commonjs(),
-        vue(),
+        vue({
+            css: true
+        }),
         image(),
         babel({
             exclude: 'node_modules/**'
         }),
+        postcss(),
         serve({
             contentBase: '', //服务器启动的文件夹，默认是项目根目录，需要在该文件下创建index.html
             port: 8020 //端口号，默认10001
